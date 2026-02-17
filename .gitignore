@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code
+.claude/
+
+# BMAD internal (keep _bmad-output/)
+_bmad/
+
+# Sass cache
+.sass-cache/

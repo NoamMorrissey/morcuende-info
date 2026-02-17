@@ -1,0 +1,18 @@
+// -----------------------------------------------------------
+// DEPENDENCIAS
+// -----------------------------------------------------------
+@use 'sass:map';
+@use '../1-settings/opt-colors' as mapCol;
+
+.bloque {
+    background-color: map.get(mapCol.$opt-colors, 'base', 'black');
+}
+.inner-bloque {
+    background-color: map.get(mapCol.$opt-colors, 'brand', 'red');
+}
+.inner-bloque2 {
+    background-color: map.get(mapCol.$opt-colors, 'brand', 'yellow');
+}
+.inner-bloque3 {
+    background-color: map.get(mapCol.$opt-colors, 'brand', 'blue');
+}

@@ -1,0 +1,21 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Este proyecto es el sitio web principal de North Strategy, desarrollado con un enfoque \"utility-first\" (Tailwind CSS) y una arquitectura modular estricta. El objetivo es crear componentes altamente reutilizables y limpios, siguiendo un un sistema de diseño definido.",
+  "main": "index.js",
+  "scripts": {
+    "tokens": "node token-engine/build.js",
+    "sass": "sass scss/styles.scss:css/styles.css --watch --load-path=node_modules",
+    "build": "npm run tokens && sass scss/styles.scss:css/styles.css --load-path=node_modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.93.3"
+  },
+  "dependencies": {
+    "modern-normalize": "^3.0.1"
+  }
+}

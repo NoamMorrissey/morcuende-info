@@ -1,0 +1,177 @@
+// -----------------------------------------------------------
+// DEPENDENCIAS
+// -----------------------------------------------------------
+@use 'sass:map';
+@use '../../2-tools/functions' as mapFun;
+@use '../../1-settings/options' as mapOpt;
+@use '../../1-settings/opt-colors' as mapCol;
+@use '../../2-tools/mixins' as mix;
+
+// -----------------------------------------------------------
+// ESTILO BASE
+// -----------------------------------------------------------
+$nav-height: 70px;
+$hamburger-size: map.get(mapOpt.$opt-dimensions, 120);   // 24px
+$hamburger-stroke: map.get(mapOpt.$opt-dimensions, 20);  // 2px
+$hamburger-gap: map.get(mapOpt.$opt-dimensions, 50);     // 8px
+
+// -----------------------------------------------------------
+// COMPONENTE ORGANISM NAV
+// -----------------------------------------------------------
+.organism-nav {
+
+    .nav-toggle {
+        position: relative;
+        right: $nav-height;
+        padding-top: map.get(mapOpt.$opt-dimensions, 60);
+        margin: 0;
+    }
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: $nav-height;
+    background-color: map.get(mapCol.$opt-colors, 'base', 'white');
+    z-index: map.get(mapOpt.$opt-elevation, max);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
+    &.is-open {
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0;
+
+        .molecule-logo-nav {
+            position: absolute;
+            top: 0;
+            left: map.get(mapOpt.$opt-dimensions, 0);
+            height: $nav-height;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-toggle {
+            position: absolute;
+            right: $nav-height;
+            height: $nav-height;
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            padding-top: map.get(mapOpt.$opt-dimensions, 0);
+        }
+
+        .molecule-link-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 95%;
+            margin-top: map.get(mapOpt.$opt-dimensions, 320);
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    // Estilo del botón hamburguesa
+    .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        appearance: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        order: 2;
+        z-index: map.get(mapOpt.$opt-elevation, sticky);
+        padding-right: 2.5%;
+
+        .hamburger {
+            display: block;
+            width: $hamburger-size;
+            height: $hamburger-stroke;
+            background-color: map.get(mapCol.$opt-colors, 'neutral', '900');
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: $hamburger-size;
+                height: $hamburger-stroke;
+                background-color: map.get(mapCol.$opt-colors, 'neutral', '900');
+                left: 0;
+            }
+
+            &::before { top: -$hamburger-gap; }
+            &::after { bottom: $hamburger-gap; }
+        }
+    }
+
+    // Animación de la hamburguesa a X
+    &.is-open .hamburger {
+        background-color: transparent;
+        &::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+        &::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+        }
+    }
+
+    // --- TABLET ---
+    @include mix.bp('tablet') {
+        top: mapFun.to-rem(map.get(mapOpt.$opt-dimensions, 160));
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: fit-content;
+        height: auto;
+        transition: transform map.get(mapOpt.$opt-movement-duration, medium) map.get(mapOpt.$opt-movement-easing, in-out),
+                    opacity map.get(mapOpt.$opt-movement-duration, fast) map.get(mapOpt.$opt-movement-easing, in-out);
+        animation: slideDownInitial map.get(mapOpt.$opt-movement-duration, medium) map.get(mapOpt.$opt-movement-easing, in-out);
+        transform: translate(-50%, 0);
+
+        gap: map.get(mapOpt.$opt-dimensions, 0);
+        margin: 0 auto;
+
+        border-radius: map.get(mapOpt.$opt-radius, 50);
+        background-color: color-mix(in srgb, map.get(mapCol.$opt-colors, 'base', 'white') map.get(mapCol.$opacity-levels, 80), transparent);
+        box-shadow: 0 0 map.get(mapOpt.$opt-dimensions, 50) 0 color-mix(in srgb, map.get(mapCol.$opt-colors, 'base', 'black') map.get(mapCol.$opacity-levels, 20), transparent);
+
+        padding: map.get(mapOpt.$opt-dimensions, 30) map.get(mapOpt.$opt-dimensions, 30) map.get(mapOpt.$opt-dimensions, 30) map.get(mapOpt.$opt-dimensions, 0);
+
+        &.is-hidden {
+            animation: none;
+            transform: translate(-50%, -200%);
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+    }
+
+    // --- LAPTOP ---
+    @include mix.bp('laptop') {
+        padding: map.get(mapOpt.$opt-dimensions, 40) map.get(mapOpt.$opt-dimensions, 40) map.get(mapOpt.$opt-dimensions, 40) map.get(mapOpt.$opt-dimensions, 0);
+        top: mapFun.to-rem(map.get(mapOpt.$opt-dimensions, 180));
+    }
+
+    // --- DESKTOP ---
+    @include mix.bp('desktop') {
+        padding: map.get(mapOpt.$opt-dimensions, 50) map.get(mapOpt.$opt-dimensions, 50) map.get(mapOpt.$opt-dimensions, 50) map.get(mapOpt.$opt-dimensions, 0);
+        top: mapFun.to-rem(map.get(mapOpt.$opt-dimensions, 200));
+    }
+}
+
+@keyframes slideDownInitial {
+    0% { transform: translate(-50%, -100px); opacity: 1; }
+    100% { transform: translate(-50%, 0); opacity: 1; }
+}

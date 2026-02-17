@@ -1,0 +1,133 @@
+// -----------------------------------------------------------
+// DEPENDENCIAS
+// -----------------------------------------------------------
+@use 'sass:map';
+@use '../../2-tools/functions'            as   mapFun;
+@use '../../1-settings/options'           as   mapOpt;
+@use '../../1-settings/opt-colors'        as   mapCol;
+@use '../../1-settings/opt-typography'    as   mapTyp;
+@use '../../2-tools/mixins'               as   mix;
+
+// -----------------------------------------------------------
+// ESTILO BASE
+// -----------------------------------------------------------
+$style-key: 'headlines-regular-h6';
+
+// -----------------------------------------------------------
+// COMPONENTE ATOM LANG NAV
+// -----------------------------------------------------------
+.atom-lang-nav {
+    a {
+
+        $mobile-style: map.get(mapTyp.$typography-mobile-styles, $style-key);
+
+        // Estilos texto
+        font-family: map.get($mobile-style, 'font-family');
+        font-weight: map.get($mobile-style, 'semi-bold');
+        font-size: mapFun.to-rem(map.get($mobile-style, 'font-size'));
+        line-height: mapFun.to-rem(map.get($mobile-style, 'line-height'));
+        letter-spacing: map.get(mapOpt.$opt-font-spacing, normal);
+
+        // Estilos visuales
+        width: map.get(mapOpt.$opt-dimensions, 90);
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        color: map.get(mapCol.$opt-colors, 'base', 'white'); 
+        background: map.get(mapCol.$opt-colors, 'base', 'black');
+        border-radius: map.get(mapOpt.$opt-radius, 100);
+        padding: map.get(mapOpt.$opt-dimensions, 60) map.get(mapOpt.$opt-dimensions, 60);
+        white-space: nowrap;
+
+        position: fixed;
+        top: mapFun.to-rem(map.get(mapOpt.$opt-dimensions, 70));
+        right: map.get(mapOpt.$opt-dimensions, 80);
+        z-index: map.get(mapOpt.$opt-elevation, max);
+
+        // Estilos interacción
+        text-decoration: none;
+        transition: color map.get(mapOpt.$opt-movement-duration, medium) map.get(mapOpt.$opt-movement-easing, in-out);
+
+        &:active {
+            // --- TABLET ---
+            @include mix.bp('tablet') {
+                transform: translate(map.get(mapOpt.$opt-dimensions, 20), map.get(mapOpt.$opt-dimensions, 20));
+            }
+        }
+
+        // --- TABLET ---
+        @include mix.bp('tablet') {
+            $tablet-style: map.get(mapTyp.$typography-tablet-styles, $style-key);
+        
+            // Estilos texto TABLET
+            font-size: mapFun.to-rem(map.get($tablet-style, 'font-size'));
+            line-height: mapFun.to-rem(map.get($tablet-style, 'line-height'));
+            width: map.get(mapOpt.$opt-dimensions, 210);
+            padding:0;
+            position: fixed;
+
+            // Estilos visuales
+    
+            top: mapFun.to-rem(map.get(mapOpt.$opt-dimensions, 160));
+            right: mapFun.to-rem(map.get(mapOpt.$opt-dimensions, 160));
+
+        }
+
+        // --- LAPTOP ---
+        @include mix.bp('laptop') {
+            $laptop-style: map.get(mapTyp.$typography-laptop-styles, $style-key);
+        
+            // Estilos texto LAPTOP
+            font-size: mapFun.to-rem(map.get($laptop-style, 'font-size'));
+            line-height: mapFun.to-rem(map.get($laptop-style, 'line-height'));
+            width: map.get(mapOpt.$opt-dimensions, 255);
+
+            // Estilos visuales
+    
+            top: mapFun.to-rem(map.get(mapOpt.$opt-dimensions, 180));
+            right: mapFun.to-rem(map.get(mapOpt.$opt-dimensions, 180));
+
+        }
+
+        // --- DESKTOP ---
+        @include mix.bp('desktop') {
+            $desktop-style: map.get(mapTyp.$typography-desktop-styles, $style-key);
+
+            // Estilos texto DESKTOP
+            font-size: mapFun.to-rem(map.get($desktop-style, 'font-size'));
+            line-height: mapFun.to-rem(map.get($desktop-style, 'line-height'));
+            width: map.get(mapOpt.$opt-dimensions, 275);
+
+            // Estilos visuales
+    
+            top: mapFun.to-rem(map.get(mapOpt.$opt-dimensions, 200));
+            right: mapFun.to-rem(map.get(mapOpt.$opt-dimensions, 200));
+
+        }
+    }
+
+    &--eng a, &--esp a  {
+        
+        // Configuraciones de la imagen de fondo (preparación)
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+
+    }
+    &--eng a:hover {
+        
+        color: transparent;
+        background-image: url('../assets/images/flags/GB.png');
+        
+    }
+
+    &--esp a:hover {
+        
+        color: transparent;
+        background-image: url('../assets/images/flags/ES.png');
+        
+    }
+}

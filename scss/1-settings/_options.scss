@@ -1,0 +1,190 @@
+// GENERATED FILE — DO NOT EDIT MANUALLY.
+// Source of truth: tokens/*.json
+// Regenerate with: npm run tokens
+
+$opt-base-size: 16px;
+
+$opt-stroke: (
+    0: 0px,
+    10: 1px,
+    20: 2px,
+    40: 4px
+);
+
+$opt-elevation: (
+    hide: -1,
+    base: 0,
+    dropdown: 1000,
+    sticky: 1100,
+    overlay: 1300,
+    modal: 1400,
+    popover: 1500,
+    toast: 1700,
+    tooltip: 1800,
+    max: 1000000000
+);
+
+$opt-movement-duration: (
+    slow: 500ms,
+    medium: 300ms,
+    fast: 200ms
+);
+
+$opt-movement-easing: (
+    linear: cubic-bezier(0, 0, 1, 1),
+    in: cubic-bezier(0.42, 0, 1, 1),
+    in-out: cubic-bezier(0.42, 0, 0.58, 1)
+);
+
+$opt-ratio: (
+    square: 1,
+    landscape-sm: 1.5,
+    landscape-md: 1.25,
+    landscape-lg: 1.7778,
+    portrait-sm: 0.6667,
+    portrait-md: 0.8,
+    portrait-lg: 0.5625
+);
+
+$opt-radius: (
+    0: 0px,
+    20: 2px,
+    40: 4px,
+    50: 8px,
+    60: 16px,
+    70: 24px,
+    100: 255px
+);
+
+$opt-dimensions: (
+    0: 0px,
+    10: 1px,
+    20: 2px,
+    30: 4px,
+    40: 6px,
+    50: 8px,
+    55: 10px,
+    60: 12px,
+    70: 14px,
+    80: 16px,
+    90: 18px,
+    100: 20px,
+    110: 22px,
+    120: 24px,
+    130: 26px,
+    140: 28px,
+    150: 30px,
+    160: 32px,
+    170: 34px,
+    180: 36px,
+    190: 38px,
+    200: 40px,
+    210: 42px,
+    220: 44px,
+    230: 46px,
+    240: 48px,
+    250: 50px,
+    255: 54px,
+    260: 56px,
+    270: 64px,
+    275: 66px,
+    280: 72px,
+    290: 80px,
+    300: 84px,
+    310: 88px,
+    320: 100px,
+    330: 102px,
+    340: 108px,
+    350: 112px,
+    360: 128px,
+    380: 256px
+);
+
+$opt-font-families: (
+    primary: 'Public Sans',
+    secondary: 'Noto Serif'
+);
+
+$opt-font-weights: (
+    regular: 400,
+    medium: 500,
+    semi-bold: 600,
+    bold: 700,
+    black: 900
+);
+
+$opt-font-sizes: (
+    8: 8px,
+    9: 9px,
+    10: 10px,
+    12: 12px,
+    14: 14px,
+    16: 16px,
+    18: 18px,
+    20: 20px,
+    22: 22px,
+    24: 24px,
+    26: 26px,
+    28: 28px,
+    30: 30px,
+    32: 32px,
+    34: 34px,
+    36: 36px,
+    38: 38px,
+    40: 40px,
+    42: 42px,
+    44: 44px,
+    48: 48px,
+    50: 50px,
+    52: 52px,
+    54: 54px,
+    56: 56px,
+    58: 58px,
+    60: 60px,
+    62: 62px,
+    64: 64px,
+    66: 66px,
+    68: 68px,
+    70: 70px,
+    72: 72px,
+    74: 74px,
+    78: 78px,
+    80: 80px,
+    84: 84px,
+    86: 86px,
+    88: 88px,
+    90: 90px,
+    94: 94px,
+    96: 96px,
+    98: 98px,
+    100: 100px,
+    106: 106px,
+    112: 112px,
+    120: 120px,
+    122: 122px,
+    126: 126px,
+    134: 134px,
+    138: 138px,
+    140: 140px,
+    154: 154px,
+    156: 156px,
+    172: 172px,
+    176: 176px,
+    192: 192px,
+    196: 196px
+);
+
+$opt-font-spacing: (
+    normal: 0em,
+    tight: -0.02em,
+    tighther: -0.04em,
+    wide: 0.02em,
+    wider: 0.04em
+);
+
+$opt-icon-sizes: (
+    18: 18,
+    24: 24,
+    36: 36,
+    48: 48
+);

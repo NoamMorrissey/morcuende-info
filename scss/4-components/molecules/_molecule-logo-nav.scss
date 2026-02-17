@@ -1,0 +1,45 @@
+// -----------------------------------------------------------
+// DEPENDENCIAS
+// -----------------------------------------------------------
+@use 'sass:map';
+@use '../../1-settings/options' as mapOpt;
+@use '../../1-settings/opt-colors' as mapCol;
+@use '../../2-tools/mixins' as mix;
+
+// -----------------------------------------------------------
+// COMPONENTE MOLECULE LOGO NAV
+// -----------------------------------------------------------
+.molecule-logo-nav{
+
+    position: relative;
+    left: 2.5%;
+
+    // --- TABLET ---
+    @include mix.bp('tablet') {
+    
+        // Estilos visuales
+        padding-right: map.get(mapOpt.$opt-dimensions, 270);
+        position: relative;
+        left: auto;
+    }
+    // --- LAPTOP ---
+    @include mix.bp('laptop') {
+        padding-right: map.get(mapOpt.$opt-dimensions, 290);
+    }
+
+    // --- DESKTOP ---
+    @include mix.bp('desktop') {
+        padding-right: map.get(mapOpt.$opt-dimensions, 310);
+    }
+    
+    h1 {
+        font-size: inherit;     /* Elimina el 2em de normalize */
+        margin: 0;              /* Elimina el 0.67em de normalize */
+        font-weight: inherit;   /* Opcional: para que no herede la negrita por defecto */
+        line-height: inherit;   /* Hereda la altura de línea del contenedor */
+    }
+
+}
+.is-open .molecule-logo-nav { 
+    padding-left: 2.5%;
+ }

@@ -1,0 +1,68 @@
+// -----------------------------------------------------------
+// DEPENDENCIAS
+// -----------------------------------------------------------
+@use 'sass:map';
+@use '../../1-settings/options' as mapOpt;
+@use '../../1-settings/opt-colors' as mapCol;
+@use '../../2-tools/mixins' as mix;
+
+// -----------------------------------------------------------
+// ESTADOS
+// -----------------------------------------------------------
+.molecule-card {
+
+    // Enlace A de toda la CARD
+    .molecule-card--link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        height: 100%;
+    }
+
+    // Molécula PILL de la CARD
+    .molecule-pill-card {
+
+        display: grid; /* Crea un contexto de rejilla */
+        width: fit-content;
+    }
+
+}
+
+// -----------------------------------------------------------
+// TABLET
+// -----------------------------------------------------------
+// Estilos para la animación de la PILL CARD en el HOVER de <A>
+@include mix.bp('tablet') {
+    .molecule-card--link {
+        
+        .atom-pill-card--base{
+
+            transform: translateX(0);
+            opacity: map.get(mapCol.$opacity-levels, 80);
+            transition: all map.get(mapOpt.$opt-movement-duration, fast) map.get(mapOpt.$opt-movement-easing, linear);
+            
+        }
+        .atom-pill-card--hover{
+
+            pointer-events: none; // No se puede clicar mientras está oculto
+            opacity: map.get(mapCol.$opacity-levels, 0); // Invisible al inicio
+            transition: all map.get(mapOpt.$opt-movement-duration, fast) map.get(mapOpt.$opt-movement-easing, linear);
+            
+        }
+    }
+    .molecule-card--link:hover {
+
+        .atom-pill-card--base{
+
+            pointer-events: none;
+            opacity: map.get(mapCol.$opacity-levels, 0);
+            transform: translateX(map.get(mapOpt.$opt-dimensions, 150)); // Se retira hacia la derecha
+            
+        }
+        .atom-pill-card--hover{
+
+            opacity: map.get(mapCol.$opacity-levels, 100); // Aparece
+            transform: translateX(map.get(mapOpt.$opt-dimensions, 0)); // Llega a su posición original
+        }
+    }
+}

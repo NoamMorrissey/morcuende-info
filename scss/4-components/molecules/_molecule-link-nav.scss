@@ -1,0 +1,78 @@
+// -----------------------------------------------------------
+// DEPENDENCIAS
+// -----------------------------------------------------------
+@use 'sass:map';
+@use '../../1-settings/options' as mapOpt;
+@use '../../1-settings/opt-colors' as mapCol;
+@use '../../2-tools/mixins' as mix;
+
+// -----------------------------------------------------------
+// COMPONENTE MOLECULE LINK NAV
+// -----------------------------------------------------------
+.molecule-link-nav {
+
+    // Estilos visuales
+    display: none; // Se oculta en móvil cerrado
+    align-items: center;
+    justify-content: flex-end; /* Alinea todo el bloque a la derecha */
+    
+    ul {
+        margin: map.get(mapOpt.$opt-dimensions, 0);
+        padding: map.get(mapOpt.$opt-dimensions, 0);
+        width: 100%;
+
+
+        li {
+            list-style: none;       /* Forzamos también en el hijo */
+            list-style-type: none;  /* Refuerzo para Safari para eliminar biñeta */
+            border-bottom: map.get(mapOpt.$opt-dimensions, 10) solid map.get(mapCol.$opt-colors, 'neutral', '500');
+            width: 100%;
+      
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    // --- TABLET ---
+    @include mix.bp('tablet') {
+        
+        display: flex;
+        gap: map.get(mapOpt.$opt-dimensions, 20);
+        width: inherit;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            -webkit-overflow-scrolling: touch;  // Suavidad en iPhone
+            gap: map.get(mapOpt.$opt-dimensions, 20);
+            white-space: nowrap;
+
+            li {
+                border-bottom: none;
+                display: flex;
+                align-items: center;
+                margin: 0;
+            }
+        }
+    }
+    // --- LAPTOP ---
+    @include mix.bp('laptop') {
+
+        gap: map.get(mapOpt.$opt-dimensions, 30);
+
+        ul {
+            gap: map.get(mapOpt.$opt-dimensions, 30);
+        }
+    }
+
+    // --- DESKTOP ---
+    @include mix.bp('desktop') {
+
+        gap: map.get(mapOpt.$opt-dimensions, 40);
+
+        ul {
+            gap: map.get(mapOpt.$opt-dimensions, 40);
+        }
+    }
+}

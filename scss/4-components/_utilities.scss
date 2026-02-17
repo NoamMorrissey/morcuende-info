@@ -1,0 +1,7 @@
+// -----------------------------------------------------------
+// DEPENDENCIAS
+// -----------------------------------------------------------
+@use '../2-tools/mixins' as mix;
+
+// Generar todas las clases de tipografía
+@include mix.generate-typography-classes();

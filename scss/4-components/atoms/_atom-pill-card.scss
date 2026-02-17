@@ -1,0 +1,99 @@
+// -----------------------------------------------------------
+// DEPENDENCIAS
+// -----------------------------------------------------------
+@use 'sass:map';
+@use '../../2-tools/functions' as mapFun;
+@use '../../1-settings/options' as mapOpt;
+@use '../../1-settings/opt-colors' as mapCol;
+@use '../../1-settings/opt-typography' as mapTyp;
+@use '../../2-tools/mixins' as mix;
+
+// -----------------------------------------------------------
+// ESTILO BASE
+// -----------------------------------------------------------
+$style-key: 'overline';
+
+// -----------------------------------------------------------
+// COMPONENTE ATOM PILL CARD
+// -----------------------------------------------------------
+.atom-pill-card--base, 
+.atom-pill-card--hover {
+    
+    $mobile-style: map.get(mapTyp.$typography-mobile-styles, $style-key);
+
+    // Estilos texto
+    font-family: map.get($mobile-style, 'font-family');
+    font-weight: map.get(mapOpt.$opt-font-weights, 'semi-bold');
+    font-size: mapFun.to-rem(map.get($mobile-style, 'font-size'));
+    line-height: mapFun.to-rem(map.get($mobile-style, 'line-height'));
+    letter-spacing: map.get(mapOpt.$opt-font-spacing, tight);
+    text-transform: uppercase;
+
+    // Estilos visuales
+    padding: map.get(mapOpt.$opt-dimensions, 30) map.get(mapOpt.$opt-dimensions, 60);
+    background-color: map.get(mapCol.$opt-colors, 'base', 'white');
+    border-radius: map.get(mapOpt.$opt-radius, 100);
+    margin: map.get(mapOpt.$opt-dimensions, 0);
+    align-items: center;
+    width: fit-content;
+    display: flex;
+    position: absolute;
+    grid-area: 1 / 1; /* Ambos ocupan la fila 1, columna 1 */
+
+    .material-icons{
+        display: none;
+    }
+
+    // --- TABLET ---
+    @include mix.bp('tablet') {
+        $tablet-style: map.get(mapTyp.$typography-tablet-styles, $style-key);
+        
+        // Estilos texto
+        font-size: mapFun.to-rem(map.get($tablet-style, 'font-size'));
+        line-height: mapFun.to-rem(map.get($tablet-style, 'line-height'));
+
+        // Estilos visuales
+        gap: map.get(mapOpt.$opt-dimensions, 40);
+        padding: map.get(mapOpt.$opt-dimensions, 30) map.get(mapOpt.$opt-dimensions, 80);
+
+        .material-icons{
+            display: inline;
+            font-size: map.get(mapOpt.$opt-dimensions, 100);
+        }
+
+    }
+    // --- LAPTOP ---
+    @include mix.bp('laptop') {
+        $laptop-style: map.get(mapTyp.$typography-laptop-styles, $style-key);
+        
+        // Estilos texto
+        font-size: mapFun.to-rem(map.get($laptop-style, 'font-size'));
+        line-height: mapFun.to-rem(map.get($laptop-style, 'line-height'));
+
+        // Estilos visuales
+        gap: map.get(mapOpt.$opt-dimensions, 50);
+        padding: map.get(mapOpt.$opt-dimensions, 40) map.get(mapOpt.$opt-dimensions, 90);
+
+        .material-icons{
+            font-size: map.get(mapOpt.$opt-dimensions, 110);
+        }
+    
+    }
+    // --- DESKTOP ---
+    @include mix.bp('desktop') {
+        $desktop-style: map.get(mapTyp.$typography-desktop-styles, $style-key);
+        
+        // Estilos texto
+        font-size: mapFun.to-rem(map.get($desktop-style, 'font-size'));
+        line-height: mapFun.to-rem(map.get($desktop-style, 'line-height'));
+
+        // Estilos visuales
+        gap: map.get(mapOpt.$opt-dimensions, 60);
+        padding: map.get(mapOpt.$opt-dimensions, 50) map.get(mapOpt.$opt-dimensions, 100);
+
+        .material-icons{
+            font-size: map.get(mapOpt.$opt-dimensions, 120);
+        }
+
+    }
+}

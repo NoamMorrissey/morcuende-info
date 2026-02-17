@@ -1,0 +1,152 @@
+// -----------------------------------------------------------
+// DEPENDENCIAS
+// -----------------------------------------------------------
+@use 'sass:map';
+@use 'sass:string'                      as  mapStr;
+@use '../1-settings/opt-typography'     as  mapTyp;
+@use '../1-settings/opt-breakpoints'    as  mapBre;
+@use './functions'                      as  mapFun;
+
+// -----------------------------------------------------------
+// MIXIN BASE: Media Query para Breakpoints
+// -----------------------------------------------------------
+@mixin bp($name) {
+    $bp-value: map.get(mapBre.$opt-breakpoints, $name);
+    @if $bp-value {
+        @media (min-width: $bp-value) { 
+            @content; 
+        }
+    } @else {
+        @warn "Breakpoint '#{$name}' no encontrado en $opt-breakpoints.";
+    }
+}
+
+// -----------------------------------------------------------
+// FUNCIÓN DE REEMPLAZO DE CADENAS (str-replace)
+// -----------------------------------------------------------
+@function str-replace($string, $search, $replace: '') {
+    $index: mapStr.index($string, $search); 
+    
+    @if $index {
+        @return mapStr.slice($string, 1, $index - 1) + $replace + str-replace(mapStr.slice($string, $index + mapStr.length($search)), $search, $replace);
+    }
+    @return $string;
+}
+
+// -----------------------------------------------------------
+// MIXIN AUXILIAR: Aplica las propiedades de un solo mapa de estilos
+// -----------------------------------------------------------
+@mixin apply-style($map-styles) {
+    @each $prop, $value in $map-styles {
+        @if $prop == 'font-size' or $prop == 'line-height' {
+            #{$prop}: mapFun.to-rem($value);
+        } @else {
+            #{$prop}: $value;
+        }
+    }
+}
+
+// -----------------------------------------------------------
+// FUNCIÓN: Genera nombre de clase limpio
+// -----------------------------------------------------------
+@function get-clean-class-name($style-key) {
+    $temp-name: $style-key;
+
+    // Reemplazos de prefijos largos
+    $temp-name: str-replace($temp-name, 'headlines-super-',     'super-headline-');
+    $temp-name: str-replace($temp-name, 'headlines-regular-',   'regular-headline-');
+    $temp-name: str-replace($temp-name, 'subtitle-title-',      'subtitle-title-');
+    $temp-name: str-replace($temp-name, 'subtitle-content-',    'subtitle-content-');
+    $temp-name: str-replace($temp-name, 'body-title-',          'title-body-');
+    $temp-name: str-replace($temp-name, 'body-content-',        'content-body-');
+    $temp-name: str-replace($temp-name, 'button-',              'button-');
+
+    @return $temp-name;
+}
+
+// -----------------------------------------------------------
+// MIXIN PRINCIPAL: Genera TODAS las clases utilitarias de tipografía
+// -----------------------------------------------------------
+@mixin generate-typography-classes() {
+    
+    // Obtenemos todas las claves del mapa mobile como referencia base
+    $mobile-styles: mapTyp.$typography-mobile-styles;
+    
+    // Iteramos sobre cada estilo del mapa mobile
+    @each $style-key, $mobile-props in $mobile-styles {
+        
+        // Generamos el nombre de clase limpio
+        $class-name: get-clean-class-name($style-key);
+        $selector: mapStr.unquote(".typo-#{$class-name}");
+        
+        // Generamos la clase con todos los breakpoints
+        #{$selector} {
+            // 1. Estilos base (mobile-first)
+            @include apply-style($mobile-props);
+            
+            // 2. Tablet
+            $tablet-styles: mapTyp.$typography-tablet-styles;
+            @if map.has-key($tablet-styles, $style-key) {
+                @include bp('tablet') {
+                    @include apply-style(map.get($tablet-styles, $style-key));
+                }
+            }
+            
+            // 3. Laptop
+            $laptop-styles: mapTyp.$typography-laptop-styles;
+            @if map.has-key($laptop-styles, $style-key) {
+                @include bp('laptop') {
+                    @include apply-style(map.get($laptop-styles, $style-key));
+                }
+            }
+            
+            // 4. Desktop
+            $desktop-styles: mapTyp.$typography-desktop-styles;
+            @if map.has-key($desktop-styles, $style-key) {
+                @include bp('desktop') {
+                    @include apply-style(map.get($desktop-styles, $style-key));
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------
+// MIXIN: Aplicar estilo tipográfico específico (para uso manual)
+// -----------------------------------------------------------
+@mixin text-style($style-name, $responsive: true) {
+    $mobile-styles: mapTyp.$typography-mobile-styles;
+    
+    @if map.has-key($mobile-styles, $style-name) {
+        // Estilos base
+        @include apply-style(map.get($mobile-styles, $style-name));
+        
+        @if $responsive {
+            // Tablet
+            $tablet-styles: mapTyp.$typography-tablet-styles;
+            @if map.has-key($tablet-styles, $style-name) {
+                @include bp('tablet') {
+                    @include apply-style(map.get($tablet-styles, $style-name));
+                }
+            }
+            
+            // Laptop
+            $laptop-styles: mapTyp.$typography-laptop-styles;
+            @if map.has-key($laptop-styles, $style-name) {
+                @include bp('laptop') {
+                    @include apply-style(map.get($laptop-styles, $style-name));
+                }
+            }
+            
+            // Desktop
+            $desktop-styles: mapTyp.$typography-desktop-styles;
+            @if map.has-key($desktop-styles, $style-name) {
+                @include bp('desktop') {
+                    @include apply-style(map.get($desktop-styles, $style-name));
+                }
+            }
+        }
+    } @else {
+        @warn "Estilo tipográfico '#{$style-name}' no encontrado.";
+    }
+}

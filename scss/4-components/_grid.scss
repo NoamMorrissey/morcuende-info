@@ -1,0 +1,58 @@
+// -----------------------------------------------------------
+// DEPENDENCIAS
+// -----------------------------------------------------------
+@use 'sass:map';
+@use '../1-settings/opt-breakpoints' as mapBre;
+@use '../2-tools/functions' as mapFun;
+@use '../2-tools/mixins' as mix;
+
+// -----------------------------------------------------------
+// GRID BASE + BREAKPOINTS
+// -----------------------------------------------------------
+.grid {
+  --gutter: #{mapFun.to-rem(map.get(mapBre.$opt-gutters, mobile))};
+  display: grid;
+  gap: #{mapFun.to-rem(map.get(mapBre.$opt-gutters, mobile))};
+  padding: 0 #{mapFun.to-rem(map.get(mapBre.$opt-gutters, mobile))};
+  margin: 0 auto;
+  max-width: 100%;
+  
+  @include mix.bp(mobile) { 
+    grid-template-columns: repeat(map.get(mapBre.$opt-columns, mobile), 1fr);
+  }
+  @include mix.bp(tablet) { 
+    --gutter: #{mapFun.to-rem(map.get(mapBre.$opt-gutters, tablet))};  
+    grid-template-columns: repeat(map.get(mapBre.$opt-columns, tablet), 1fr);  
+    gap: #{mapFun.to-rem(map.get(mapBre.$opt-gutters, tablet)) * 2 };  
+    padding: 0 #{mapFun.to-rem(map.get(mapBre.$opt-gutters, tablet))};
+  }
+  // Repetir el patrón para laptop y desktop...
+  @include mix.bp(laptop) { 
+    --gutter: #{mapFun.to-rem(map.get(mapBre.$opt-gutters, laptop))};  
+    grid-template-columns: repeat(map.get(mapBre.$opt-columns, laptop), 1fr);  
+    gap: #{mapFun.to-rem(map.get(mapBre.$opt-gutters, laptop)) * 0.75 };  
+    padding: 0 #{mapFun.to-rem(map.get(mapBre.$opt-gutters, laptop))};
+  }
+  @include mix.bp(desktop) { 
+    --gutter: #{mapFun.to-rem(map.get(mapBre.$opt-gutters, desktop))}; 
+    grid-template-columns: repeat(map.get(mapBre.$opt-columns, desktop), 1fr); 
+    gap: #{mapFun.to-rem(map.get(mapBre.$opt-gutters, desktop)) * 2 }; 
+    padding: 0 #{mapFun.to-rem(map.get(mapBre.$opt-gutters, desktop))};
+  }
+  @include mix.bp(wide) { 
+    max-width: map.get(mapBre.$opt-breakpoints, wide);
+  }
+}
+
+// -----------------------------------------------------------
+// UTILIDADES ESSENCIALES (Clases de columna)
+// -----------------------------------------------------------
+@each $bp, $w in mapBre.$opt-breakpoints {
+  @include mix.bp($bp) {
+    $cols: map.get(mapBre.$opt-columns, $bp);
+    @for $i from 1 through $cols {
+      .grid__col--#{$bp}-#{$i} { grid-column: span $i; }
+    }
+    .grid__col--#{$bp}-full { grid-column: 1 / -1; }
+  }
+}

@@ -1,0 +1,54 @@
+// scss/
+// ├── 1-settings/          # Variables globales (no se compilan)
+// │   ├── _variables.scss
+                @use '1-settings/options';
+// │   ├── _colors.scss
+                @use '1-settings/opt-colors';
+// │   ├── _typography.scss
+                @use '1-settings/opt-typography';
+// │   └── _breakpoints.scss
+                @use '1-settings/opt-breakpoints';
+// │
+// ├── 2-tools/             # Mixins y funciones (no se compilan)
+// │   ├── _mixins.scss
+                @use '2-tools/mixins';
+// │   └── _functions.scss
+                @use '2-tools/functions';
+// │
+// ├── 3-generic/           # Reset/normalize + base
+// │   ├── _normalize.scss
+                @use '3-generic/normalize';
+// │   └── _base.scss
+                @use '3-generic/base';
+// │
+// ├── 4-components/
+// │   ├── utilities
+                @use '4-components/utilities';
+                @use '4-components/grid';
+// │   ├── atoms/
+                @use '4-components/atoms/atom-link-nav';
+                @use '4-components/atoms/atom-button-nav';
+                @use '4-components/atoms/atom-logo-nav';
+                @use '4-components/atoms/atom-lang-nav';
+                @use '4-components/atoms/atom-pill-card';
+// │   ├── molecules/
+                @use '4-components/molecules/molecule-link-nav';
+                @use '4-components/molecules/molecule-logo-nav';
+                @use '4-components/molecules/molecule-card';
+// │   ├── organisms/
+                @use '4-components/organisms/organism-nav';
+// │
+// ├── 5-layout/            # Estructura página (header, footer, grid container)
+// │   ├── _header.scss
+// │   ├── _footer.scss
+// │   └── _grid-container.scss
+// │
+// ├── 6-pages/             # Estilos específicos de páginas
+// │   ├── _home.scss
+// │   └── _dashboard.scss
+// │
+// ├── 7-vendor/            # Librerías externas
+// │   └── _normalize.scss
+// │
+// ├── styles.scss            # Archivo principal (se compila)
+                @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600;1,700;1,900&display=swap');

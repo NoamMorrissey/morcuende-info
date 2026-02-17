@@ -1,0 +1,2135 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600;1,700;1,900&display=swap");
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+.bloque {
+  background-color: #000000;
+}
+
+.inner-bloque {
+  background-color: #DA2A1C;
+}
+
+.inner-bloque2 {
+  background-color: #F39C11;
+}
+
+.inner-bloque3 {
+  background-color: #363D4B;
+}
+
+.typo-super-headline-h1 {
+  font-family: "Public Sans";
+  font-size: 6.625rem;
+  line-height: 6rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 768px) {
+  .typo-super-headline-h1 {
+    font-family: "Public Sans";
+    font-size: 7.875rem;
+    line-height: 7rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-super-headline-h1 {
+    font-family: "Public Sans";
+    font-size: 9.75rem;
+    line-height: 8.75rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-super-headline-h1 {
+    font-family: "Public Sans";
+    font-size: 12.25rem;
+    line-height: 11rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+}
+
+.typo-super-headline-h2 {
+  font-family: "Public Sans";
+  font-size: 4.625rem;
+  line-height: 4.25rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 768px) {
+  .typo-super-headline-h2 {
+    font-family: "Public Sans";
+    font-size: 5.5rem;
+    line-height: 4.625rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-super-headline-h2 {
+    font-family: "Public Sans";
+    font-size: 7rem;
+    line-height: 6.25rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-super-headline-h2 {
+    font-family: "Public Sans";
+    font-size: 8.625rem;
+    line-height: 7.625rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+}
+
+.typo-super-headline-h3 {
+  font-family: "Public Sans";
+  font-size: 3.375rem;
+  line-height: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 768px) {
+  .typo-super-headline-h3 {
+    font-family: "Public Sans";
+    font-size: 3.875rem;
+    line-height: 1.625rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-super-headline-h3 {
+    font-family: "Public Sans";
+    font-size: 4.875rem;
+    line-height: 4.375rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-super-headline-h3 {
+    font-family: "Public Sans";
+    font-size: 6rem;
+    line-height: 5.375rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+}
+
+.typo-regular-headline-h1 {
+  font-family: "Public Sans";
+  font-size: 3.375rem;
+  line-height: 4.625rem;
+  font-weight: 700;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-regular-headline-h1 {
+    font-family: "Public Sans";
+    font-size: 3.875rem;
+    line-height: 5.375rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-regular-headline-h1 {
+    font-family: "Public Sans";
+    font-size: 4.875rem;
+    line-height: 6.625rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-regular-headline-h1 {
+    font-family: "Public Sans";
+    font-size: 6rem;
+    line-height: 8.375rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-regular-headline-h2 {
+  font-family: "Public Sans";
+  font-size: 2.375rem;
+  line-height: 3.25rem;
+  font-weight: 700;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-regular-headline-h2 {
+    font-family: "Public Sans";
+    font-size: 2.75rem;
+    line-height: 3.75rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-regular-headline-h2 {
+    font-family: "Public Sans";
+    font-size: 3.375rem;
+    line-height: 4.625rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-regular-headline-h2 {
+    font-family: "Public Sans";
+    font-size: 4.25rem;
+    line-height: 5.875rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-regular-headline-h3 {
+  font-family: "Public Sans";
+  font-size: 1.625rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-regular-headline-h3 {
+    font-family: "Public Sans";
+    font-size: 1.875rem;
+    line-height: 2.625rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-regular-headline-h3 {
+    font-family: "Public Sans";
+    font-size: 2.375rem;
+    line-height: 3.25rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-regular-headline-h3 {
+    font-family: "Public Sans";
+    font-size: 3rem;
+    line-height: 4.125rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-regular-headline-h4 {
+  font-family: "Public Sans";
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-regular-headline-h4 {
+    font-family: "Public Sans";
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-regular-headline-h4 {
+    font-family: "Public Sans";
+    font-size: 1.625rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-regular-headline-h4 {
+    font-family: "Public Sans";
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-regular-headline-h5 {
+  font-family: "Public Sans";
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-regular-headline-h5 {
+    font-family: "Public Sans";
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-regular-headline-h5 {
+    font-family: "Public Sans";
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-regular-headline-h5 {
+    font-family: "Public Sans";
+    font-size: 1.375rem;
+    line-height: 2rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-regular-headline-h6 {
+  font-family: "Public Sans";
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-regular-headline-h6 {
+    font-family: "Public Sans";
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-regular-headline-h6 {
+    font-family: "Public Sans";
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-regular-headline-h6 {
+    font-family: "Public Sans";
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-subtitle-content-subtitle-1 {
+  font-family: "Noto Serif";
+  font-size: 2.375rem;
+  line-height: 2.625rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-subtitle-content-subtitle-1 {
+    font-family: "Noto Serif";
+    font-size: 2.75rem;
+    line-height: 3rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-subtitle-content-subtitle-1 {
+    font-family: "Noto Serif";
+    font-size: 3.375rem;
+    line-height: 3.75rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-subtitle-content-subtitle-1 {
+    font-family: "Noto Serif";
+    font-size: 4.25rem;
+    line-height: 4.625rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-subtitle-content-subtitle-2 {
+  font-family: "Noto Serif";
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-subtitle-content-subtitle-2 {
+    font-family: "Noto Serif";
+    font-size: 1.875rem;
+    line-height: 2.125rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-subtitle-content-subtitle-2 {
+    font-family: "Noto Serif";
+    font-size: 2.375rem;
+    line-height: 2.625rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-subtitle-content-subtitle-2 {
+    font-family: "Noto Serif";
+    font-size: 3rem;
+    line-height: 3.25rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-subtitle-content-subtitle-3 {
+  font-family: "Noto Serif";
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-subtitle-content-subtitle-3 {
+    font-family: "Noto Serif";
+    font-size: 1.375rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-subtitle-content-subtitle-3 {
+    font-family: "Noto Serif";
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-subtitle-content-subtitle-3 {
+    font-family: "Noto Serif";
+    font-size: 2.125rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-subtitle-title-subtitle-1 {
+  font-family: "Public Sans";
+  font-size: 2.375rem;
+  line-height: 2.625rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-subtitle-title-subtitle-1 {
+    font-family: "Public Sans";
+    font-size: 2.75rem;
+    line-height: 3rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-subtitle-title-subtitle-1 {
+    font-family: "Public Sans";
+    font-size: 3.375rem;
+    line-height: 3.75rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-subtitle-title-subtitle-1 {
+    font-family: "Public Sans";
+    font-size: 4.25rem;
+    line-height: 4.625rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-subtitle-title-subtitle-2 {
+  font-family: "Public Sans";
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-subtitle-title-subtitle-2 {
+    font-family: "Public Sans";
+    font-size: 1.875rem;
+    line-height: 2.125rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-subtitle-title-subtitle-2 {
+    font-family: "Public Sans";
+    font-size: 2.375rem;
+    line-height: 2.625rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-subtitle-title-subtitle-2 {
+    font-family: "Public Sans";
+    font-size: 3rem;
+    line-height: 3.25rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-subtitle-title-subtitle-3 {
+  font-family: "Public Sans";
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-subtitle-title-subtitle-3 {
+    font-family: "Public Sans";
+    font-size: 1.375rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-subtitle-title-subtitle-3 {
+    font-family: "Public Sans";
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-subtitle-title-subtitle-3 {
+    font-family: "Public Sans";
+    font-size: 2.125rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-subtitle-title-subtitle-4 {
+  font-family: "Public Sans";
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-subtitle-title-subtitle-4 {
+    font-family: "Public Sans";
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-subtitle-title-subtitle-4 {
+    font-family: "Public Sans";
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-subtitle-title-subtitle-4 {
+    font-family: "Public Sans";
+    font-size: 1.5rem;
+    line-height: 1.625rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-content-body-body-1 {
+  font-family: "Noto Serif";
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-content-body-body-1 {
+    font-family: "Noto Serif";
+    font-size: 1.5rem;
+    line-height: 2.125rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-content-body-body-1 {
+    font-family: "Noto Serif";
+    font-size: 1.75rem;
+    line-height: 2.375rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-content-body-body-1 {
+    font-family: "Noto Serif";
+    font-size: 2.125rem;
+    line-height: 2.75rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-content-body-body-2 {
+  font-family: "Noto Serif";
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-content-body-body-2 {
+    font-family: "Noto Serif";
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-content-body-body-2 {
+    font-family: "Noto Serif";
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-content-body-body-2 {
+    font-family: "Noto Serif";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-content-body-body-3 {
+  font-family: "Noto Serif";
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-content-body-body-3 {
+    font-family: "Noto Serif";
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-content-body-body-3 {
+    font-family: "Noto Serif";
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-content-body-body-3 {
+    font-family: "Noto Serif";
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-title-body-body-1 {
+  font-family: "Public Sans";
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-title-body-body-1 {
+    font-family: "Public Sans";
+    font-size: 1.5rem;
+    line-height: 2.125rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-title-body-body-1 {
+    font-family: "Public Sans";
+    font-size: 1.75rem;
+    line-height: 2.375rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-title-body-body-1 {
+    font-family: "Public Sans";
+    font-size: 2.125rem;
+    line-height: 2.75rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-title-body-body-2 {
+  font-family: "Public Sans";
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-title-body-body-2 {
+    font-family: "Public Sans";
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-title-body-body-2 {
+    font-family: "Public Sans";
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-title-body-body-2 {
+    font-family: "Public Sans";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-title-body-body-3 {
+  font-family: "Public Sans";
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-title-body-body-3 {
+    font-family: "Public Sans";
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-title-body-body-3 {
+    font-family: "Public Sans";
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-title-body-body-3 {
+    font-family: "Public Sans";
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-title-body-4 {
+  font-family: "Public Sans";
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-title-body-4 {
+    font-family: "Public Sans";
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-title-body-4 {
+    font-family: "Public Sans";
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-title-body-4 {
+    font-family: "Public Sans";
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-caption {
+  font-family: "Public Sans";
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-caption {
+    font-family: "Public Sans";
+    font-size: 0.625rem;
+    line-height: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-caption {
+    font-family: "Public Sans";
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-caption {
+    font-family: "Public Sans";
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-overline {
+  font-family: "Public Sans";
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-overline {
+    font-family: "Public Sans";
+    font-size: 0.625rem;
+    line-height: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-overline {
+    font-family: "Public Sans";
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-overline {
+    font-family: "Public Sans";
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-button-l {
+  font-family: "Public Sans";
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-button-l {
+    font-family: "Public Sans";
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-button-l {
+    font-family: "Public Sans";
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-button-l {
+    font-family: "Public Sans";
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-button-m {
+  font-family: "Public Sans";
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-button-m {
+    font-family: "Public Sans";
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-button-m {
+    font-family: "Public Sans";
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-button-m {
+    font-family: "Public Sans";
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+
+.typo-button-s {
+  font-family: "Public Sans";
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+@media (min-width: 768px) {
+  .typo-button-s {
+    font-family: "Public Sans";
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1024px) {
+  .typo-button-s {
+    font-family: "Public Sans";
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+@media (min-width: 1366px) {
+  .typo-button-s {
+    font-family: "Public Sans";
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+
+.grid {
+  --gutter: 1rem;
+  display: grid;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
+@media (min-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .grid {
+    --gutter: 0.5rem;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .grid {
+    --gutter: 1.5rem;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.125rem;
+    padding: 0 1.5rem;
+  }
+}
+@media (min-width: 1366px) {
+  .grid {
+    --gutter: 0.75rem;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 1.5rem;
+    padding: 0 0.75rem;
+  }
+}
+@media (min-width: 1920px) {
+  .grid {
+    max-width: 1920px;
+  }
+}
+
+@media (min-width: 480px) {
+  .grid__col--mobile-1 {
+    grid-column: span 1;
+  }
+  .grid__col--mobile-2 {
+    grid-column: span 2;
+  }
+  .grid__col--mobile-full {
+    grid-column: 1/-1;
+  }
+}
+@media (min-width: 768px) {
+  .grid__col--tablet-1 {
+    grid-column: span 1;
+  }
+  .grid__col--tablet-2 {
+    grid-column: span 2;
+  }
+  .grid__col--tablet-3 {
+    grid-column: span 3;
+  }
+  .grid__col--tablet-4 {
+    grid-column: span 4;
+  }
+  .grid__col--tablet-5 {
+    grid-column: span 5;
+  }
+  .grid__col--tablet-6 {
+    grid-column: span 6;
+  }
+  .grid__col--tablet-7 {
+    grid-column: span 7;
+  }
+  .grid__col--tablet-8 {
+    grid-column: span 8;
+  }
+  .grid__col--tablet-full {
+    grid-column: 1/-1;
+  }
+}
+@media (min-width: 1024px) {
+  .grid__col--laptop-1 {
+    grid-column: span 1;
+  }
+  .grid__col--laptop-2 {
+    grid-column: span 2;
+  }
+  .grid__col--laptop-3 {
+    grid-column: span 3;
+  }
+  .grid__col--laptop-4 {
+    grid-column: span 4;
+  }
+  .grid__col--laptop-5 {
+    grid-column: span 5;
+  }
+  .grid__col--laptop-6 {
+    grid-column: span 6;
+  }
+  .grid__col--laptop-7 {
+    grid-column: span 7;
+  }
+  .grid__col--laptop-8 {
+    grid-column: span 8;
+  }
+  .grid__col--laptop-9 {
+    grid-column: span 9;
+  }
+  .grid__col--laptop-10 {
+    grid-column: span 10;
+  }
+  .grid__col--laptop-11 {
+    grid-column: span 11;
+  }
+  .grid__col--laptop-12 {
+    grid-column: span 12;
+  }
+  .grid__col--laptop-full {
+    grid-column: 1/-1;
+  }
+}
+@media (min-width: 1366px) {
+  .grid__col--desktop-1 {
+    grid-column: span 1;
+  }
+  .grid__col--desktop-2 {
+    grid-column: span 2;
+  }
+  .grid__col--desktop-3 {
+    grid-column: span 3;
+  }
+  .grid__col--desktop-4 {
+    grid-column: span 4;
+  }
+  .grid__col--desktop-5 {
+    grid-column: span 5;
+  }
+  .grid__col--desktop-6 {
+    grid-column: span 6;
+  }
+  .grid__col--desktop-7 {
+    grid-column: span 7;
+  }
+  .grid__col--desktop-8 {
+    grid-column: span 8;
+  }
+  .grid__col--desktop-9 {
+    grid-column: span 9;
+  }
+  .grid__col--desktop-10 {
+    grid-column: span 10;
+  }
+  .grid__col--desktop-11 {
+    grid-column: span 11;
+  }
+  .grid__col--desktop-12 {
+    grid-column: span 12;
+  }
+  .grid__col--desktop-13 {
+    grid-column: span 13;
+  }
+  .grid__col--desktop-14 {
+    grid-column: span 14;
+  }
+  .grid__col--desktop-15 {
+    grid-column: span 15;
+  }
+  .grid__col--desktop-16 {
+    grid-column: span 16;
+  }
+  .grid__col--desktop-full {
+    grid-column: 1/-1;
+  }
+}
+@media (min-width: 1920px) {
+  .grid__col--wide-1 {
+    grid-column: span 1;
+  }
+  .grid__col--wide-2 {
+    grid-column: span 2;
+  }
+  .grid__col--wide-3 {
+    grid-column: span 3;
+  }
+  .grid__col--wide-4 {
+    grid-column: span 4;
+  }
+  .grid__col--wide-5 {
+    grid-column: span 5;
+  }
+  .grid__col--wide-6 {
+    grid-column: span 6;
+  }
+  .grid__col--wide-7 {
+    grid-column: span 7;
+  }
+  .grid__col--wide-8 {
+    grid-column: span 8;
+  }
+  .grid__col--wide-9 {
+    grid-column: span 9;
+  }
+  .grid__col--wide-10 {
+    grid-column: span 10;
+  }
+  .grid__col--wide-11 {
+    grid-column: span 11;
+  }
+  .grid__col--wide-12 {
+    grid-column: span 12;
+  }
+  .grid__col--wide-13 {
+    grid-column: span 13;
+  }
+  .grid__col--wide-14 {
+    grid-column: span 14;
+  }
+  .grid__col--wide-15 {
+    grid-column: span 15;
+  }
+  .grid__col--wide-16 {
+    grid-column: span 16;
+  }
+  .grid__col--wide-full {
+    grid-column: 1/-1;
+  }
+}
+.atom-link-nav {
+  font-family: "Public Sans";
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  letter-spacing: 0em;
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  color: #1A2026;
+  border-radius: 4px;
+  padding: 16px 16px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+@media (min-width: 768px) {
+  .atom-link-nav {
+    text-align: center;
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    border-radius: 255px;
+    padding: 8px 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .atom-link-nav {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    padding: 12px 18px;
+  }
+}
+@media (min-width: 1366px) {
+  .atom-link-nav {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    padding: 14px 20px;
+  }
+}
+.atom-link-nav:hover {
+  color: #DA2A1C;
+  background-color: #FFFFFF;
+  transition: background-color 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+@media (min-width: 768px) {
+  .atom-link-nav:active {
+    transform: translate(2px, 2px);
+  }
+}
+.atom-link-nav:focus {
+  outline: none;
+}
+.atom-link-nav--active {
+  background: #D1D6DC;
+}
+.atom-link-nav--disabled {
+  cursor: not-allowed;
+  color: #B4BCC4;
+  pointer-events: none;
+}
+
+.btn {
+  text-decoration: none;
+  font-family: "Public Sans";
+  font-weight: 600;
+  letter-spacing: 0em;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #1A2026;
+  border: none;
+}
+.btn:hover {
+  color: #FDE4E2;
+  background-color: #F04D3D;
+}
+.btn:active {
+  color: #000000;
+  background-color: #D1D6DC;
+  transform: translate(2px, 2px);
+}
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: #E5E8EB;
+  color: #B4BCC4;
+  pointer-events: none;
+}
+.btn--nav {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  display: flex;
+  width: 100%;
+  border-radius: 4px;
+  padding: 12px 0px;
+}
+@media (min-width: 768px) {
+  .btn--nav {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    display: inline-block;
+    width: auto;
+    padding: 8px 18px;
+  }
+}
+@media (min-width: 1024px) {
+  .btn--nav {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    padding: 12px 20px;
+  }
+}
+@media (min-width: 1366px) {
+  .btn--nav {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    padding: 14px 24px;
+  }
+}
+
+.atom-logo-nav {
+  font-family: "Public Sans";
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  letter-spacing: -0.02em;
+  text-align: left;
+  cursor: pointer;
+  display: inline-flex;
+  color: #FFFFFF;
+  background: #000000;
+  border-radius: 4px;
+  padding: 12px 12px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.atom-logo-nav--name {
+  display: none;
+}
+@media (min-width: 768px) {
+  .atom-logo-nav {
+    text-align: center;
+    display: inline-flex;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    color: #000000;
+    background: none;
+    border-radius: 0px;
+    padding: 8px 16px;
+  }
+  .atom-logo-nav--iso {
+    display: none;
+  }
+  .atom-logo-nav--name {
+    display: inline;
+  }
+}
+@media (min-width: 1024px) {
+  .atom-logo-nav {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    padding: 12px 18px;
+  }
+}
+@media (min-width: 1366px) {
+  .atom-logo-nav {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    padding: 14px 20px;
+  }
+}
+.atom-logo-nav:hover {
+  color: #FFFFFF;
+  background: #DA2A1C;
+  transition: background-color 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+@media (min-width: 768px) {
+  .atom-logo-nav:hover {
+    color: #DA2A1C;
+    background: none;
+  }
+}
+@media (min-width: 768px) {
+  .atom-logo-nav:active {
+    transform: translate(2px, 2px);
+  }
+}
+
+.atom-lang-nav a {
+  font-family: "Public Sans";
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  letter-spacing: 0em;
+  width: 18px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  color: #FFFFFF;
+  background: #000000;
+  border-radius: 255px;
+  padding: 12px 12px;
+  white-space: nowrap;
+  position: fixed;
+  top: 0.875rem;
+  right: 16px;
+  z-index: 1000000000;
+  text-decoration: none;
+  transition: color 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+@media (min-width: 768px) {
+  .atom-lang-nav a:active {
+    transform: translate(2px, 2px);
+  }
+}
+@media (min-width: 768px) {
+  .atom-lang-nav a {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    width: 42px;
+    padding: 0;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .atom-lang-nav a {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    width: 54px;
+    top: 2.25rem;
+    right: 2.25rem;
+  }
+}
+@media (min-width: 1366px) {
+  .atom-lang-nav a {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    width: 66px;
+    top: 2.5rem;
+    right: 2.5rem;
+  }
+}
+.atom-lang-nav--eng a, .atom-lang-nav--esp a {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.atom-lang-nav--eng a:hover {
+  color: transparent;
+  background-image: url("../assets/images/flags/GB.png");
+}
+.atom-lang-nav--esp a:hover {
+  color: transparent;
+  background-image: url("../assets/images/flags/ES.png");
+}
+
+.atom-pill-card--base,
+.atom-pill-card--hover {
+  font-family: "Public Sans";
+  font-weight: 600;
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  background-color: #FFFFFF;
+  border-radius: 255px;
+  margin: 0px;
+  align-items: center;
+  width: fit-content;
+  display: flex;
+  position: absolute;
+  grid-area: 1/1; /* Ambos ocupan la fila 1, columna 1 */
+}
+.atom-pill-card--base .material-icons,
+.atom-pill-card--hover .material-icons {
+  display: none;
+}
+@media (min-width: 768px) {
+  .atom-pill-card--base,
+  .atom-pill-card--hover {
+    font-size: 0.625rem;
+    line-height: 0.875rem;
+    gap: 6px;
+    padding: 4px 16px;
+  }
+  .atom-pill-card--base .material-icons,
+  .atom-pill-card--hover .material-icons {
+    display: inline;
+    font-size: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .atom-pill-card--base,
+  .atom-pill-card--hover {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    gap: 8px;
+    padding: 6px 18px;
+  }
+  .atom-pill-card--base .material-icons,
+  .atom-pill-card--hover .material-icons {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1366px) {
+  .atom-pill-card--base,
+  .atom-pill-card--hover {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    gap: 12px;
+    padding: 8px 20px;
+  }
+  .atom-pill-card--base .material-icons,
+  .atom-pill-card--hover .material-icons {
+    font-size: 24px;
+  }
+}
+
+.molecule-link-nav {
+  display: none;
+  align-items: center;
+  justify-content: flex-end; /* Alinea todo el bloque a la derecha */
+}
+.molecule-link-nav ul {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+.molecule-link-nav ul li {
+  list-style: none; /* Forzamos también en el hijo */
+  list-style-type: none; /* Refuerzo para Safari para eliminar biñeta */
+  border-bottom: 1px solid #88909C;
+  width: 100%;
+}
+.molecule-link-nav ul li:last-child {
+  border-bottom: none;
+}
+@media (min-width: 768px) {
+  .molecule-link-nav {
+    display: flex;
+    gap: 2px;
+    width: inherit;
+  }
+  .molecule-link-nav ul {
+    display: flex;
+    flex-direction: row;
+    -webkit-overflow-scrolling: touch;
+    gap: 2px;
+    white-space: nowrap;
+  }
+  .molecule-link-nav ul li {
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .molecule-link-nav {
+    gap: 4px;
+  }
+  .molecule-link-nav ul {
+    gap: 4px;
+  }
+}
+@media (min-width: 1366px) {
+  .molecule-link-nav {
+    gap: 6px;
+  }
+  .molecule-link-nav ul {
+    gap: 6px;
+  }
+}
+
+.molecule-logo-nav {
+  position: relative;
+  left: 2.5%;
+}
+@media (min-width: 768px) {
+  .molecule-logo-nav {
+    padding-right: 64px;
+    position: relative;
+    left: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .molecule-logo-nav {
+    padding-right: 80px;
+  }
+}
+@media (min-width: 1366px) {
+  .molecule-logo-nav {
+    padding-right: 88px;
+  }
+}
+.molecule-logo-nav h1 {
+  font-size: inherit; /* Elimina el 2em de normalize */
+  margin: 0; /* Elimina el 0.67em de normalize */
+  font-weight: inherit; /* Opcional: para que no herede la negrita por defecto */
+  line-height: inherit; /* Hereda la altura de línea del contenedor */
+}
+
+.is-open .molecule-logo-nav {
+  padding-left: 2.5%;
+}
+
+.molecule-card .molecule-card--link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+.molecule-card .molecule-pill-card {
+  display: grid; /* Crea un contexto de rejilla */
+  width: fit-content;
+}
+
+@media (min-width: 768px) {
+  .molecule-card--link .atom-pill-card--base {
+    transform: translateX(0);
+    opacity: 80%;
+    transition: all 200ms cubic-bezier(0, 0, 1, 1);
+  }
+  .molecule-card--link .atom-pill-card--hover {
+    pointer-events: none;
+    opacity: 0%;
+    transition: all 200ms cubic-bezier(0, 0, 1, 1);
+  }
+  .molecule-card--link:hover .atom-pill-card--base {
+    pointer-events: none;
+    opacity: 0%;
+    transform: translateX(30px);
+  }
+  .molecule-card--link:hover .atom-pill-card--hover {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+.organism-nav .nav-toggle {
+  position: relative;
+  right: 70px;
+  padding-top: 12px;
+  margin: 0;
+}
+.organism-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #FFFFFF;
+  z-index: 1000000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.organism-nav.is-open {
+  height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+}
+.organism-nav.is-open .molecule-logo-nav {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+.organism-nav.is-open .nav-toggle {
+  position: absolute;
+  right: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  padding-top: 0px;
+}
+.organism-nav.is-open .molecule-link-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  margin-top: 100px;
+  opacity: 1;
+  transform: translateY(0);
+}
+.organism-nav .nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  order: 2;
+  z-index: 1100;
+  padding-right: 2.5%;
+}
+.organism-nav .nav-toggle .hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #1A2026;
+  position: relative;
+}
+.organism-nav .nav-toggle .hamburger::before, .organism-nav .nav-toggle .hamburger::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #1A2026;
+  left: 0;
+}
+.organism-nav .nav-toggle .hamburger::before {
+  top: -8px;
+}
+.organism-nav .nav-toggle .hamburger::after {
+  bottom: 8px;
+}
+.organism-nav.is-open .hamburger {
+  background-color: transparent;
+}
+.organism-nav.is-open .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.organism-nav.is-open .hamburger::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+@media (min-width: 768px) {
+  .organism-nav {
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: auto;
+    transition: transform 300ms cubic-bezier(0.42, 0, 0.58, 1), opacity 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    animation: slideDownInitial 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    transform: translate(-50%, 0);
+    gap: 0px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: color-mix(in srgb, #FFFFFF 80%, transparent);
+    box-shadow: 0 0 8px 0 color-mix(in srgb, #000000 20%, transparent);
+    padding: 4px 4px 4px 0px;
+  }
+  .organism-nav.is-hidden {
+    animation: none;
+    transform: translate(-50%, -200%);
+    opacity: 1;
+    pointer-events: none;
+  }
+  .organism-nav .nav-toggle {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .organism-nav {
+    padding: 6px 6px 6px 0px;
+    top: 2.25rem;
+  }
+}
+@media (min-width: 1366px) {
+  .organism-nav {
+    padding: 8px 8px 8px 0px;
+    top: 2.5rem;
+  }
+}
+
+@keyframes slideDownInitial {
+  0% {
+    transform: translate(-50%, -100px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

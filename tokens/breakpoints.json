@@ -1,0 +1,27 @@
+{
+  "opt": {
+    "breakpoints": {
+      "$type": "dimension",
+      "mobile":  { "$value": "480px" },
+      "tablet":  { "$value": "768px" },
+      "laptop":  { "$value": "1024px" },
+      "desktop": { "$value": "1366px" },
+      "wide":    { "$value": "1920px" }
+    },
+    "columns": {
+      "$type": "number",
+      "mobile":  { "$value": 2 },
+      "tablet":  { "$value": 8 },
+      "laptop":  { "$value": 12 },
+      "desktop": { "$value": 16 },
+      "wide":    { "$value": 16 }
+    },
+    "gutters": {
+      "$type": "dimension",
+      "mobile":  { "$value": "16px" },
+      "tablet":  { "$value": "8px" },
+      "laptop":  { "$value": "24px" },
+      "desktop": { "$value": "12px" }
+    }
+  }
+}
