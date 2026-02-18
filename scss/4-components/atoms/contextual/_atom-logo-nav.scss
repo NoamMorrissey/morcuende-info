@@ -2,11 +2,11 @@
 // DEPENDENCIAS
 // -----------------------------------------------------------
 @use 'sass:map';
-@use '../../2-tools/functions'          as  mapFun;
-@use '../../1-settings/options'         as  mapOpt;
-@use '../../1-settings/opt-colors'      as  mapCol;
-@use '../../1-settings/opt-typography'  as  mapTyp;
-@use '../../2-tools/mixins'             as  mix;
+@use '../../../2-tools/functions'          as mapFun;
+@use '../../../1-settings/options'         as mapOpt;
+@use '../../../1-settings/opt-colors'      as mapCol;
+@use '../../../1-settings/opt-typography'  as mapTyp;
+@use '../../../2-tools/mixins'             as mix;
 
 // -----------------------------------------------------------
 // ESTILO BASE
@@ -14,32 +14,36 @@
 $style-key: 'headlines-regular-h6';
 
 // -----------------------------------------------------------
-// COMPONENTE ATOM LINK NAV
+// COMPONENTE ATOM LOGO NAV
 // -----------------------------------------------------------
-
-.atom-link-nav {
+.atom-logo-nav {
     
     $mobile-style: map.get(mapTyp.$typography-mobile-styles, $style-key);
 
     // Estilos texto
     font-family: map.get($mobile-style, 'font-family');
-    font-weight: map.get($mobile-style, 'font-weight');
+    font-weight: map.get(mapOpt.$opt-font-weights, 'semi-bold');
     font-size: mapFun.to-rem(map.get($mobile-style, 'font-size'));
     line-height: mapFun.to-rem(map.get($mobile-style, 'line-height'));
-    letter-spacing: map.get($mobile-style, 'letter-spacing');
+    letter-spacing: map.get(mapOpt.$opt-font-spacing, tight);
 
     // Estilos visuales
     text-align: left;
     cursor: pointer;
-    display: block;
-    color: map.get(mapCol.$opt-colors, 'neutral', '900');
+    display: inline-flex;
+    color: map.get(mapCol.$opt-colors, 'base', 'white'); 
+    background: map.get(mapCol.$opt-colors, 'base', 'black');
     border-radius: map.get(mapOpt.$opt-radius, 40);
-    padding: map.get(mapOpt.$opt-dimensions, 80) map.get(mapOpt.$opt-dimensions, 80);
+    padding: map.get(mapOpt.$opt-dimensions, 60) map.get(mapOpt.$opt-dimensions, 60);
     white-space: nowrap;
     
     // Estilos interacción
     text-decoration: none;
     transition: color map.get(mapOpt.$opt-movement-duration, medium) map.get(mapOpt.$opt-movement-easing, in-out);
+
+    &--name {
+        display: none;
+    }
 
     // --- TABLET ---
     @include mix.bp('tablet') {
@@ -47,16 +51,22 @@ $style-key: 'headlines-regular-h6';
         
         // Estilos texto TABLET
         text-align: center;
-        display: inline-block;
-        line-height: 1; // Fuerza una altura de línea controlada
-        text-decoration: none;
-        vertical-align: middle;
+        display: inline-flex;
         font-size: mapFun.to-rem(map.get($tablet-style, 'font-size'));
         line-height: mapFun.to-rem(map.get($tablet-style, 'line-height'));
 
         // Estilos visuales TABLET
-        border-radius: map.get(mapOpt.$opt-radius, 100);
+        color: map.get(mapCol.$opt-colors, 'base', 'black'); 
+        background:none;
+        border-radius: map.get(mapOpt.$opt-radius, 0);
         padding: map.get(mapOpt.$opt-dimensions, 50) map.get(mapOpt.$opt-dimensions, 80);
+
+        &--iso {
+            display: none;
+        }
+        &--name {
+            display:inline;
+        }
     }
 
     // --- LAPTOP ---
@@ -87,9 +97,15 @@ $style-key: 'headlines-regular-h6';
     // ESTADOS
     // -----------------------------------------------------------
     &:hover {
-        color: map.get(mapCol.$opt-colors, 'primary', '500');
-        background-color: map.get(mapCol.$opt-colors, 'base', 'white');
+        color: map.get(mapCol.$opt-colors, 'base', 'white');
+        background: map.get(mapCol.$opt-colors, 'primary', '500');
         transition: background-color map.get(mapOpt.$opt-movement-duration, fast) map.get(mapOpt.$opt-movement-easing, in-out);
+
+        // --- TABLET ---
+        @include mix.bp('tablet') {
+            color: map.get(mapCol.$opt-colors, 'primary', '500');
+            background:none;
+        }
     }
 
     &:active {
@@ -97,19 +113,5 @@ $style-key: 'headlines-regular-h6';
         @include mix.bp('tablet') {
             transform: translate(map.get(mapOpt.$opt-dimensions, 20), map.get(mapOpt.$opt-dimensions, 20));
         }
-    }
-
-    &:focus {
-        outline: none;
-    }
-
-    &--active {
-        background: map.get(mapCol.$opt-colors, 'neutral', '300');
-    }
-
-    &--disabled {
-        cursor: not-allowed;
-        color: map.get(mapCol.$opt-colors, 'neutral', '400'); 
-        pointer-events: none;
     }
 }

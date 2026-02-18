@@ -26,17 +26,22 @@
                 @use '4-components/utilities';
                 @use '4-components/grid';
 // │   ├── atoms/
-                @use '4-components/atoms/atom-link-nav';
-                @use '4-components/atoms/atom-button-nav';
-                @use '4-components/atoms/atom-logo-nav';
-                @use '4-components/atoms/atom-lang-nav';
-                @use '4-components/atoms/atom-pill-card';
+// │   │   ├── global/
+                @use '4-components/atoms/global/atom-button';
+// │   │   └── contextual/
+                @use '4-components/atoms/contextual/atom-link-nav';
+                @use '4-components/atoms/contextual/atom-logo-nav';
+                @use '4-components/atoms/contextual/atom-lang-nav';
+                @use '4-components/atoms/contextual/atom-pill-card';
 // │   ├── molecules/
-                @use '4-components/molecules/molecule-link-nav';
-                @use '4-components/molecules/molecule-logo-nav';
-                @use '4-components/molecules/molecule-card';
+// │   │   ├── global/
+                @use '4-components/molecules/global/molecule-card';
+// │   │   └── contextual/
+                @use '4-components/molecules/contextual/molecule-link-nav';
+                @use '4-components/molecules/contextual/molecule-logo-nav';
 // │   ├── organisms/
-                @use '4-components/organisms/organism-nav';
+// │   │   └── contextual/
+                @use '4-components/organisms/contextual/organism-nav';
 // │
 // ├── 5-layout/            # Estructura página (header, footer, grid container)
 // │   ├── _header.scss

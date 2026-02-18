@@ -2,11 +2,11 @@
 // DEPENDENCIAS
 // -----------------------------------------------------------
 @use 'sass:map';
-@use '../../2-tools/functions'            as   mapFun;
-@use '../../1-settings/options'           as   mapOpt;
-@use '../../1-settings/opt-colors'        as   mapCol;
-@use '../../1-settings/opt-typography'    as   mapTyp;
-@use '../../2-tools/mixins'               as   mix;
+@use '../../../2-tools/functions'            as   mapFun;
+@use '../../../1-settings/options'           as   mapOpt;
+@use '../../../1-settings/opt-colors'        as   mapCol;
+@use '../../../1-settings/opt-typography'    as   mapTyp;
+@use '../../../2-tools/mixins'               as   mix;
 
 // -----------------------------------------------------------
 // ESTILO BASE
