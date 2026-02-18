@@ -17,3 +17,9 @@ _bmad/
 
 # Sass cache
 .sass-cache/
+
+# Storybook build output
+storybook-static/
+
+# Visual Regression Testing
+screenshots/

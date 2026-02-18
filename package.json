@@ -2,18 +2,34 @@
   "name": "web",
   "version": "1.0.0",
   "description": "Este proyecto es el sitio web principal de North Strategy, desarrollado con un enfoque \"utility-first\" (Tailwind CSS) y una arquitectura modular estricta. El objetivo es crear componentes altamente reutilizables y limpios, siguiendo un un sistema de diseño definido.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "tokens": "node token-engine/build.js",
     "sass": "sass scss/styles.scss:css/styles.css --watch --load-path=node_modules",
     "build": "npm run tokens && sass scss/styles.scss:css/styles.css --load-path=node_modules",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build -o storybook-static",
+    "screenshot": "node scripts/screenshot.js",
+    "screenshot:baseline": "node scripts/screenshot.js --baseline",
+    "screenshot:compare": "reg-cli screenshots/actual screenshots/expected screenshots/diff --report screenshots/report.html --json screenshots/report.json --matchingThreshold 0.01",
+    "test:visual": "npm run screenshot && npm run screenshot:compare",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.93.3"
+    "@storybook/addon-a11y": "^10.2.10",
+    "@storybook/addon-backgrounds": "^9.0.8",
+    "@storybook/addon-docs": "^10.2.10",
+    "@storybook/addon-measure": "^9.0.8",
+    "@storybook/addon-outline": "^9.0.8",
+    "@storybook/html-vite": "^10.2.10",
+    "playwright": "^1.58.2",
+    "reg-cli": "^0.18.14",
+    "sass": "^1.93.3",
+    "storybook": "^10.2.10"
   },
   "dependencies": {
     "modern-normalize": "^3.0.1"
