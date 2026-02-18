@@ -21,10 +21,7 @@
   "license": "ISC",
   "devDependencies": {
     "@storybook/addon-a11y": "^10.2.10",
-    "@storybook/addon-backgrounds": "^9.0.8",
     "@storybook/addon-docs": "^10.2.10",
-    "@storybook/addon-measure": "^9.0.8",
-    "@storybook/addon-outline": "^9.0.8",
     "@storybook/html-vite": "^10.2.10",
     "playwright": "^1.58.2",
     "reg-cli": "^0.18.14",
